@@ -23,7 +23,7 @@
 # first_name = input("enter your name: ")
 # last_name = input("enter last_name: ")
 # found_user = None
-# for id,info in users.items():
+# for (id,info) in users.items():
 #     if info['first_name'] == first_name and info['last_name'] == last_name:
 #         found_user = info
 # if found_user:
