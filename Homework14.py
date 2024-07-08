@@ -27,7 +27,7 @@
 # else:
 #     print("error")
 #     exit()
-
+# print(list)
 # registration = input("Enter users name: ")
 # for i in users:
 #     if users['first_name'] == registration:
