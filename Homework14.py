@@ -15,24 +15,24 @@
 # Task2
 
 # users = {
-#     '1': {'ID': '1', 'first_name': 'James', 'last_name': 'Doe', 'email': 'python@example.com', 'password': 'password123', 'phone_number': '1234567890'},
-#     '2': {'ID': '2', 'first_name': 'Jane', 'last_name': 'Smith', 'email': 'py@example.com', 'password': 'securepwd', 'phone_number': '0987654321'},
-#     '3': {'ID': '3', 'first_name': 'Ann', 'last_name': 'Williams', 'email': 'pyth@example.com', 'password': 'mysecretpw', 'phone_number': '5555555555'}
+#     'first_name': None, 'last_name': None, 'email': None, 'password': None, 'phone_number': None
 # }
-
-# first_name = input("enter your name: ")
-# last_name = input("enter last_name: ")
-# found_user = None
-# for (id,info) in users.items():
-#     if info['first_name'] == first_name and info['last_name'] == last_name:
-#         found_user = info
-# if found_user:
-#     print("User found")
-#     print(f"ID: {found_user['ID']}")
-#     print(f"first_name: {found_user['first_name']}")
-#     print(f"last_name: {found_user['last_name']}")
-#     print(f"email: {found_user['email']}")
-#     print(f"password: {found_user['password']}")
-#     print(f"phone_number: {found_user['phone_number']}")
+# list = []
+# users_count = input("enter quantity of users: ")
+# if users_count.isdigit():
+#         for i in range(int(users_count)):
+#             for key in users.keys():
+#                 users[key] = input(f"Enter {key} for {i+1} user: ")
+#         list.append(users.copy())
 # else:
-#     print("Not found")
+#     print("error")
+#     exit()
+
+# registration = input("Enter users name: ")
+# for i in users:
+#     if users['first_name'] == registration:
+#         print("User found")
+#         break
+#     else:
+#         print("user not found")
+#         break
