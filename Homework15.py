@@ -8,7 +8,7 @@ list = []
 users_count = input("enter quantity of users: ")
 if users_count.isdigit():
         for i in range(int(users_count)):
-            for key in users:
+            for key in users.keys():
                 if key == "username":
                      username = input("enter username: ")
                      if len(username) > 5 and len(username) < 20 and username.isalnum() and username.lower()  not in reserved:
