@@ -49,7 +49,7 @@ if users_count.isdigit():
                         print("The number should only contain digits, with optional ‘+’ at the beginning")
                         break 
             list.append(users.copy())
-        print(list)
+            print(list)
 else:
     print("quantity must be valid number")
     exit()
