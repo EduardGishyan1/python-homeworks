@@ -1,24 +1,19 @@
 # Task1
-
 reserved = ["admin","root"]
 users = {
     'username':None, 'email': None, 'password': None, 'phone_number': None
 }
 list = []
-flag = True
 users_count = input("enter quantity of users: ")
 if users_count.isdigit():
         for i in range(int(users_count)):
-         for i in range(int(users_count)):
             for key in users:
-            
                 if key == "username":
                      username = input("enter username: ")
-                     if len(username) > 5 and len(username) < 20 and username.isalnum() and username.lower() not in reserved:
+                     if len(username) > 5 and len(username) < 20 and username.isalnum() and username.lower()  not in reserved:
                           users["username"] = username
                      else:
                           print("Should be between 5 and 20 characters long.Can only contain alphanumeric characters.Should not be a reserved name")
-                          flag = False
                           break
                 elif key == "email":
                      email = input("enter email: ")
@@ -26,7 +21,6 @@ if users_count.isdigit():
                           users["email"] = email
                      else:
                         print("Should have a valid email format (e.g., user@example.com).")
-                        flag = False
                         break
                 elif key == "password":
                      password = input("enter password: ")
@@ -40,15 +34,12 @@ if users_count.isdigit():
                                 users["password"] = password
                             else:
                                 print("repeat password is incorrect")
-                                flag = False
                                 break
                         else:
                             print("incorrect password")
-                            flag = False
                             break
                      else:
                         print("Should be at least 8 characters long.Must contain at least one uppercase letter, one lowercase letter, one digit, and one special character (e.g., !@#$%^&*).")
-                        flag = False
                         break
                 elif key == "phone_number":
                     phone_number = input("enter phone_number: ")
@@ -56,13 +47,9 @@ if users_count.isdigit():
                         users["phone_number"] = phone_number
                     else:
                         print("The number should only contain digits, with optional ‘+’ at the beginning")
-                        flag = False
                         break 
-        list.append(users.copy())
+            list.append(users.copy())
+        print(list)
 else:
     print("quantity must be valid number")
     exit()
-if flag:
-    print(list)
-else:
-    print("invalid registration")
