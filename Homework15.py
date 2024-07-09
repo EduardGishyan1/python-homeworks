@@ -54,3 +54,51 @@ if users_count.isdigit():
 else:
     print("quantity must be valid number")
     exit()
+
+# Implementation of Set Functions 
+
+set1 = {1,2,3,4,6,10,12}
+set2 = {4,5,12,6,1,2}
+
+# union()
+
+union_set = set()
+for i in set1:
+    union_set.add(i)
+for i in set2:
+    union_set.add(i)
+print(union_set)
+
+# intersection()
+
+intersection = set()
+
+for i in set1:
+    if i in set2:
+        intersection.add(i)
+print(intersection)
+
+# symetric_difference()
+
+symetric_difference = set()
+
+for i in set1:
+    if not i in set2:
+        symetric_difference.add(i)
+for j in set2:
+    if not j in set1:
+        symetric_difference.add(j)
+print(symetric_difference)
+
+# difference()
+
+set1_difference_set2 = set()
+set2_difference_set1 = set()
+for i in set1:
+     if not i in set2:
+          set1_difference_set2.add(i)
+print(set1_difference_set2) 
+for j in set2:
+     if not j in set1:
+          set2_difference_set1.add(j)
+print(set2_difference_set1)
