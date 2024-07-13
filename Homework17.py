@@ -10,7 +10,7 @@
 
 # def foo(n):
 #     if type(n) == int and n > 0:
-#         for i in range(n):
+#         for i in range(n+1):
 #             print(i)
 #     else:
 #         print("argument must be a valid number")
