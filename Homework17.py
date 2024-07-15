@@ -70,9 +70,9 @@
 #                 max_number = i
 #             if i < min_number:
 #                 min_number = i
-#         print(f"max number is {max_number}")
-#         print(f"min number is {min_number}")
+#         return max_number,min_number
 #     except:
 #         print("Lists elements must be a digit")
 
-# foo([1,2,3,4])
+# x = foo([1,2,3,4])
+# print(x)
