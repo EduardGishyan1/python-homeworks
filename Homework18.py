@@ -45,9 +45,7 @@
 #         print(lst[0])  
 #         print_list(lst[1:])
 
-# my_list = [1, 2, 3, 4, 5]
-# print("Elements of the list:")
-# print_list(my_list)
+# print_list([1, 2, 3, 4, 5])
 
 # Task6
 
@@ -67,8 +65,7 @@
 #     else:
 #         return reverse_string(s[1:]) + s[0]
 
-# reversed_string = reverse_string("Hello")
-# print(reversed_string)
+# print(reverse_string("Hello"))
 
 # Task8
 
@@ -81,8 +78,7 @@
 #     else:
 #         return fibonacci(n - 1) + fibonacci(n - 2)
 
-# result = fibonacci(7)
-# print(result)
+# print(fibonacci(7))
 
 # Task9
 
@@ -103,9 +99,6 @@
 #     else:
 #         return s[0] == s[-1] and is_palindrome(s[1:-1])
 
-# string1 = "radar"
-# string2 = "hello"
-
 # print(is_palindrome("Hello"))
 
 # Task11
@@ -116,5 +109,4 @@
 #     else:
 #         return num % 10 + sum_of_digits(num // 10)
 
-# x = sum_of_digits(12345)
-# print(x)
+# print(sum_of_digits(12345))
