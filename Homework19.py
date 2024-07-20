@@ -38,7 +38,7 @@
 #         return False
 #     elif n == 2:
 #         return True
-#     return check(n,2)
+#     return check(n,1)
 # def check(n,i):
 #     if i * i > n:
 #         return True
