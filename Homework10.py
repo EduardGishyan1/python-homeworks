@@ -131,9 +131,8 @@
 # Task13
 
 # s = "12soe3"
-# s.split()
 # for char in s:
-#     if("0" <= char <= "9"):
+#     if char.isdigit():
 #         print(char)
 
 
