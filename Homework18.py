@@ -3,7 +3,6 @@
 # def foo(n):
 #     if n <= 0:
 #         return
-
 #     print(n)
 #     foo(n-1)
 
@@ -12,11 +11,11 @@
 # Task2
 
 # def foo(n):
-#     if n > 5:
+#     if n <= 0:
 #         return
-#     foo(n+1)
+#     foo(n-1)
 #     print(n)
-# foo(1)
+# foo(5)
 
 # Task3
 
