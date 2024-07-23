@@ -32,13 +32,11 @@
 # Task4
 
 # def foo(num):
-#     try:
-#         sum = 0
-#         for i in str(num):
-#             sum += int(i)
-#         print(sum)
-#     except:
-#         print("argument must be a digit")
+#      sum = 0
+#      while not num == 0:
+#        sum += num % 10
+#        num = num // 10
+#      print(sum)
 # foo(123)
 
 # Task5
