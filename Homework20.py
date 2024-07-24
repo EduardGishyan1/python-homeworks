@@ -59,7 +59,7 @@ ls = [1,2,3,4,5]
 # Task5
 
 def foo(name,price,category):
-    print(f"name {name} price {price} category {category}")
+    print(f"name {name} price {price}$ category {category}")
 
 products = {
     "name":"laptop",
