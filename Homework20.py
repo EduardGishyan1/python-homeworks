@@ -84,13 +84,11 @@ def report(title,total_sales,new_customers,*,top_seller = "James",average_sale =
 
 # Task7
 
-
-timestamp = 1
-
+timestamp = 0
 def foo(severity,*args,**kwargs):
     global timestamp
     user = kwargs['user'] if "user" in kwargs else 'unknown'
-    log_entry = f"Timestamp {timestamp} user: {user} - "
+    log_entry = f"Timestamp {timestamp} user: {user} , {severity} - "
     log_entry += ' '.join(str(i) for i in args)
     timestamp += 1
     print(log_entry)
