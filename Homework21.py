@@ -86,6 +86,7 @@ def get_nth_element(iterable,n):
             element = next(it)
         except StopIteration:
              raise IndexError("Index out of range") 
+    return element
 #print(get_nth_element([1,6,3,5],5))
 
 # Task6
