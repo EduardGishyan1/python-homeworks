@@ -1,9 +1,9 @@
 # Task1
 
-def my_map(func,iterables):
+def my_map(func:"callable",iterables:"list")->list:
     '''Map function
 
-       This function Takes function and an iterable as an input and returns a li       st of the results
+       This function Takes function and an iterable as an input and returns a list of the results
 
        Example:
         >>> def foo(x):
@@ -23,7 +23,7 @@ lst = [1,2,3,4,5]
 
 # Task2
 
-def my_filter(func,iterable):
+def my_filter(func:"callable",iterable:"list")->list:
     '''Mimics of python's built-in filter() function 
 
        This functions takes a function and iterable as input
@@ -46,11 +46,11 @@ def foo(x):
     return x % 2 == 0
 
 ls = [1,2,3,4,5]
-#print(my_filter(foo,ls))
+print(my_filter(foo,ls))
 
 # Task3
 
-def my_zip(*iterables):
+def my_zip(*iterables:"tuple")->list:
     '''
     Mimics of python's built in zip() function
 
