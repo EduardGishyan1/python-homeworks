@@ -1,13 +1,21 @@
 # Task1
 
-text_file = open("text.txt")
-word = text_file.read().split()
-text_file.close()
-word_count = len(word)
-character_count = sum([len(char) for char in word])
-res_file = open("result.txt","w")
-res_file.write(f"word count is {word_count} , character count is {character_count}")
-res_file.close()
+def foo(file_name:str, output_file:str):
+    text_file = open(file_name)
+    lines = text_file.readlines()
+    lines_count = len(lines)
+    word_count = 0
+    character_count = 0
+    for line in lines:
+         print(line)
+         word = line.split()
+         word_count += len(word)
+         character_count += len(line)
+    out_file = open(output_file,"x")
+    out_file.write(f"lines count is {lines_count}\nwords count is {word_count}\ncharacters count is {character_count}\n")         
+
+# print(foo("text.txt","result.txt"))
+
 
 # Task2
 
@@ -40,11 +48,11 @@ import inspect
 def decorator(func):
     def wrapper(*args,**kwargs):
             for i in args:
-                 if i <= 0:
-                      raise ValueError("Enter positive number")
-            for j in kwargs:
-                 if kwargs[j] <= 0:
-                      raise ValueError("Enter positive number for keyword argument")
+                 if i <= 0 or not isinstance(i,int):
+                      raise ValueError("Enter valid number")
+            for j in kwargs.values():
+                 if j <= 0 or not isinstance(j,int):
+                      raise ValueError("Enter valid number for keyword argument")
             return func(*args,**kwargs)
     wrapper.__name__ = func.__name__
     wrapper.__annotations__ = func.__annotations__
@@ -56,8 +64,11 @@ def decorator(func):
 def foo(a,b):
      return a * b
 
-# print(foo(5,7))
-
+# try:
+#     print(foo(5,b = 7.5))
+# except Exception as e:
+#      print(e)
+     
 # Task4
 
 import time
@@ -77,6 +88,7 @@ def retry(retries:int = 2,delay:float = 1.0):
                                  raise
                             print(f"Retrying... ({attempt}/{retries})")
                             time.sleep(delay)
+                            
             return wrapper
         return decorator
 
@@ -87,4 +99,7 @@ def read_file(path:str)->str:
      x.close()
      return text
 
-# print(read_file("text.txt"))
+# try:
+#     read_file("text.txt")
+# except:
+#      print("file not found")
