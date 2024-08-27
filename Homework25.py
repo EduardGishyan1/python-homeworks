@@ -53,10 +53,9 @@
 
 # def read_file_lines(file_path):
 #     open_file = open(file_path)
-#     lines = open_file.readlines()
-#     open_file.close()
-#     for line in lines:
+#     for line in open_file:
 #         yield line.strip()
+#     open_file.close()
 
 # gen = read_file_lines("file.txt")
 # for i in gen:
