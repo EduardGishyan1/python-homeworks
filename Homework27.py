@@ -82,11 +82,6 @@
 # except ValueError as e:
 #     print(e)
 
-# Create a class Student with private attributes name, 
-# roll_number, and grades. Implement methods to add grades, 
-# calculate the average grade, and display the student’s information. 
-# Ensure that the grades are between 0 and 100.
-
 # Task3
 
 # class Student():
