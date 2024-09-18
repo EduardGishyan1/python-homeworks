@@ -1,10 +1,10 @@
 # Task1 
 
-# students_score = {"Ani":70,"Armen":80,"Suren":90}
-# students_score["Vardan"] = 100
+# students_score = {"James":70,"Ann":80,"Bob":90}
+# students_score["James"] = 100
 # print(students_score)
-# students_score["Ani"] = 90
-# students_score.pop("Armen")
+# students_score["Ann"] = 90
+# students_score.pop("Bob")
 # print(students_score)
 
 # Task2
@@ -24,14 +24,14 @@
 
 # text = input("Write any text: ")
 
-# dzaynavorner = 0
-# baxadzayner = 0
+# vowels = 0
+# consonants = 0
 
 # for letter in text:
 #     if letter in "aeiou":
-#         dzaynavorner += 1
+#         vowels += 1
 #     else:
-#         baxadzayner += 1
+#         consonants += 1
 
-# print("dzaynavorneri qanaky " , dzaynavorner)
-# print("baxadzaynneri qanaky ", baxadzayner)
+# print(f"quantity of vowels , {vowels}")
+# print("quantity of consonants , {consonants}")
