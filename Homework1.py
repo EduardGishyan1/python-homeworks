@@ -1,9 +1,9 @@
 print("Hello, world!")
 print("Eduard Gishyan")
 
-number = float(input("Grir mi tiv"))
+number = float(input("Enter number"))
 
 if number % 2 == 0:
-     print("tivy zuyg e")
+     print("number is odd")
 else:
-     print("tivy kent e")
+     print("number is even")
