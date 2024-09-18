@@ -175,6 +175,7 @@ class Product:
             self.__quantity_in_stock -= amount
         else:
             print("Enter postive number...")
+            
 obj = Product(3333344444,"mouse",5)
 obj.add_stock(5)
 obj.reduce_stock(7)
