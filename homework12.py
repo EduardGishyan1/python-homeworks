@@ -10,9 +10,9 @@
 #             check = False
 #             break
 # if check:
-#      print("arjeqnery nuynn en")
+#      print("values are same")
 # else:
-#     print("arjeqnery tarber en")
+#     print("values are different")
 
 # Task2
 
@@ -46,7 +46,7 @@
 
 # Task3
 
-# elements = input("grir tver anjatelov bacatnerov: ")
+# elements = input("write numbers seperated by spaces : ")
 # elements_list = elements.split()
 # for element in elements_list:
 #     print(element)
