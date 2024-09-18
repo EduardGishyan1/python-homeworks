@@ -2,7 +2,7 @@
 
 weight = float(input("Write your weight with kg"))
 weight_pound = weight * 2.2
-print("Your weight is" , weight_pound , "pound")
+print(f"Your weight is , {weight_pound} , pound")
 
 # Task 2
 
