@@ -53,16 +53,16 @@
 
 # Task 6
 
-# list = [1,2,3,4,5,6,7,8,9,10]
-# zuyg = []
-# kent = []
-# for i in list:
+# ls = [1,2,3,4,5,6,7,8,9,10]
+# odd= []
+# even = []
+# for i in ls:
 #     if i % 2 == 0:
-#         zuyg += [i]
+#         even += [i]
 #     else:
-#         kent += [i]
-# list = zuyg + kent
-# print(list)
+#         odd += [i]
+# ls = odd + even 
+# print(ls)
 
 # Task 7
 
@@ -72,5 +72,6 @@
 # for i in range(inp):
 #     element = int(input("Write element: "))
 #     input_list.append(element)
+
 # for j in input_list:
 #     print(j)
