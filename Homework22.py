@@ -23,7 +23,6 @@ x = make_counter()
 #print(x())
 #print(x())
 
-# Improvisation
 
 def counter():
     count = 0
