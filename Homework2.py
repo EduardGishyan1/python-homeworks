@@ -6,7 +6,7 @@ print(f"Your weight is , {weight_pound} , pound")
 
 # Task 2
 
-x = float(input("write number"))
-y = float(input("write another number"))
+x = int(input("write number"))
+y = int(input("write another number"))
 count = x-y / x+y
 print(count)
