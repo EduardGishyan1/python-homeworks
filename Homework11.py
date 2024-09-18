@@ -52,5 +52,5 @@
 
 # Task6
 
-# ls = [i for i in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]if i % 2 == 0] # Karox enq nayev grel i & 1 == 0
+# ls = [i for i in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]if i % 2 == 0] # we can also write i & 1 == 0
 # print(ls)
