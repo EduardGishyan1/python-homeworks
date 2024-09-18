@@ -154,21 +154,17 @@
 
 # Task 15
 
-# def x(n):
+# def reverse(n):
 #     return str(n) == str(n)[::-1]
 
-# def y(n):
+# def reverse_int(n):
 #     steps = 0
-#     while not x(n):
+#     while not reverse(n):
 #         reversed_n = int(str(n)[::-1])
 #         n += reversed_n
 #         steps += 1
 #     return steps
 
-# print(y(123))  
-# print(y(555))  
-# print(y(49))   
-
-# print(y(123))  
-# print(y(555))  
-# print(y(49))   
+# print(reverse(123))  
+# print(reverse(555))  
+# print(reverse(49))   
