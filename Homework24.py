@@ -1,6 +1,6 @@
 # Task1
 
-def foo(file_name:str, output_file:str):
+def word_count(file_name:str, output_file:str):
     text_file = open(file_name)
     lines = text_file.readlines()
     lines_count = len(lines)
@@ -14,7 +14,7 @@ def foo(file_name:str, output_file:str):
     out_file = open(output_file,"x")
     out_file.write(f"lines count is {lines_count}\nwords count is {word_count}\ncharacters count is {character_count}\n")         
 
-# print(foo("text.txt","result.txt"))
+# print(word_count("text.txt","result.txt"))
 
 
 # Task2
@@ -88,7 +88,6 @@ def retry(retries:int = 2,delay:float = 1.0):
                                  raise
                             print(f"Retrying... ({attempt}/{retries})")
                             time.sleep(delay)
-                            
             return wrapper
         return decorator
 
