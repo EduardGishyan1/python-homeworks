@@ -1,8 +1,6 @@
 # Task 1
 
-# x = range(0,11)
-# print(x)
-# for num in x:
+# for num in range(0,11):
 #     print(num**2) 
 
 # Task2
@@ -14,8 +12,7 @@
 
 # Task 3
 
-# multiple = range(1,20)
-# for number in multiple:
+# for number in range(1,20):
 #     if number % 3 == 0:
 #         print(number)
 
@@ -39,10 +36,10 @@
 #     print(num1 - num2)
 # elif action == "/":
 #     if num2 == 0:
-#         print("Բաժանում 0-ի հնարավոր չէ")
+#         print("you cannot divide number by 0")
 #     else:
 #         print(num1 / num2)
 # elif action == "*":
 #     print(num1 * num2)
 # else:
-#     print("սխալ գործողություն է ընտրված")
+#     print("invalid action")
