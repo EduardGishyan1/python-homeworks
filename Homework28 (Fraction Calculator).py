@@ -135,10 +135,6 @@ def main():
     f7 = -f1
     print("Negated Fraction 1:", f7)  
   
-  except TypeError as e:
-     print(e)  
-  except ValueError as e:
-     print(e)
   except ZeroDivisionError as e:
      print(e)
 
