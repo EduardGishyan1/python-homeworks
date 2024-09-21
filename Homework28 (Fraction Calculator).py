@@ -1,4 +1,4 @@
-from math import gcd,trunc
+from math import gcd
 from dataclasses import dataclass
 
 @dataclass(frozen=True)
