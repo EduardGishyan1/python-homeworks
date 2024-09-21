@@ -113,16 +113,29 @@ class Fraction:
         return self
 
 def main():
-    try:
-        obj = Fraction(14,15)
-        obj2 = Fraction(2,3)
-        print(id(obj))
-        obj += obj2
-        print(id(obj)) 
-    except Exception as e:
-        print(e)
 
+    f1 = Fraction(1, 2) 
+    f2 = Fraction(1, 3)  
+
+    print("Fraction 1:", f1)  
+    print("Fraction 2:", f2) 
+
+
+    f3 = f1 + f2
+    print("Sum:", f3)  
+
+    print("Difference:", f4)  
+
+    f5 = f1 * f2
+    print("Product:", f5)  
+
+    f6 = f1 / f2
+    print("Division:", f6)  
+
+    f7 = -f1
+    print("Negated Fraction 1:", f7)  
 
 if __name__ == "__main__":
     main()
+
 
