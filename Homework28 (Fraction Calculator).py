@@ -113,21 +113,21 @@ class Fraction:
         return self
 
 def main():
-
-    f1 = Fraction(1, 2) 
+  
+    f1 = Fraction(1, 2)  
     f2 = Fraction(1, 3)  
 
-    print("Fraction 1:", f1)  
-    print("Fraction 2:", f2) 
-
+    print("Fraction 1:", f1)
+    print("Fraction 2:", f2)
 
     f3 = f1 + f2
-    print("Sum:", f3)  
+    print("Sum:", f3)
 
+    f4 = f1 - f2
     print("Difference:", f4)  
 
     f5 = f1 * f2
-    print("Product:", f5)  
+    print("Product:", f5)
 
     f6 = f1 / f2
     print("Division:", f6)  
