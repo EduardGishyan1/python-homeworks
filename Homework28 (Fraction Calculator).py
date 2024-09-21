@@ -113,7 +113,7 @@ class Fraction:
         return self
 
 def main():
-  
+  try:
     f1 = Fraction(1, 2)  
     f2 = Fraction(1, 3)  
 
@@ -134,6 +134,13 @@ def main():
 
     f7 = -f1
     print("Negated Fraction 1:", f7)  
+  
+  except TypeError as e:
+     print(e)  
+  except ValueError as e:
+     print(e)
+  except ZeroDivisionError as e:
+     print(e)
 
 if __name__ == "__main__":
     main()
