@@ -1,4 +1,4 @@
-from typing import List, Any, Optional
+from typing import List, Any, Optional,Generator
 
 class DynamicArray:
     def __init__(self, capacity: int = 10) -> None:
@@ -49,7 +49,15 @@ class DynamicArray:
     def __eq__(self, other: object) -> bool:
         if not isinstance(other, DynamicArray):
             return NotImplemented
-        return self.__array[:self.__size] == other.__array[:other.__size]
+        elif self.__size != other.__size:
+            return False 
+        flag = True
+        for i in range(self.__size):
+            if other.__array[i] != self.__array[i]:
+                flag = False
+        
+        return flag
+        
     
     def __ne__(self, other: object) -> bool:
         return not self.__eq__(other)
@@ -68,21 +76,26 @@ class DynamicArray:
     def __ge__(self, other: object) -> bool:
         return not self.__lt__(other)
 
-    def __iter__(self):
+    def __iter__(self) -> Generator:
         for i in range(self.__size):
             yield self.__array[i]
 
     def __hash__(self) -> int:
-        raise ValueError("DynamicArray objects are not hashable")
+        raise ValueError("Mutable objects are not hashable...")
 
 a = DynamicArray()
 b = DynamicArray()
-a[3] = "hello"
+a.__setitem__(0,"Hello")
+a.__setitem__(1,"world")
+a.__setitem__(2,"Bye")
+
+
+gen = iter(a)
+for i in gen:
+    print(i)
+
 print(a)
 print(b)
-c = a + b
-print(a[-1])
-a[8] = "world"
-print(a)
-print(b)
-print(a[5])
+
+print(a > b)
+
