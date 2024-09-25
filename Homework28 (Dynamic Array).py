@@ -1,101 +1,126 @@
-from typing import List, Any, Optional,Generator
+import array
+from typing import Any,Iterator
 
 class DynamicArray:
-    def __init__(self, capacity: int = 10) -> None:
-        self.__capacity = capacity
+    def __init__(self,capacity :int = 10,value : Any = 0) -> None:
         self.__size = 0
-        self.__array: List[Optional[Any]] = [None] * self.__capacity
-
-    def __resize(self, new_capacity: int) -> None:
-        new_array: List[Optional[Any]] = [None] * new_capacity
-        for i in range(self.__size):
-            new_array[i] = self.__array[i]
-        self.__array = new_array
-        self.__capacity = new_capacity
-
-    def __getitem__(self, index: int) -> Any:
-        if index >= self.__size:
-            raise IndexError("Index out of bounds")
-        return self.__array[index]
+        self.setCapacity(capacity)
+        self.__arr = array.array("i", [value] * self.__capacity)
     
-    def __setitem__(self, index: int, value: Any) -> None:
-        if index >= self.__capacity:
-            self.__resize(max(index + 1, self.__capacity * 2))
-        self.__array[index] = value
-        self.__size = max(self.__size, index + 1)
+    def push_back(self,value:Any):
+        if self.__capacity == self.__size:
+            self.__arr = self.__resize()
+        self.__arr[self.__size] = value
+        self.__size += 1
+
+    def __resize(self):
+            new_capacity = self.__capacity * 2
+            new_arr = array.array("i",[0] * new_capacity) 
+            for i in range(self.__size):
+                new_arr[i] = self.__arr[i]
+            self.__capacity = new_capacity
+            return new_arr
+    
+    def setCapacity(self,quantity):
+        if isinstance(quantity,int) and quantity > 0:
+            self.__capacity = quantity
+        else:
+            raise ValueError("Enter valid value...")
+    
+    def __getitem__(self,index:int) -> Any:
+        if not isinstance(index,int):
+            raise ValueError("Enter valid value")
+        if index < 0:
+            index += self.__size
+        if index < 0 or index >= self.__size:
+            raise ValueError("Index out of range.")
+        return self.__arr[index]
+
+    def __setitem__(self,index:int,value:Any) -> None:
+        if not isinstance(index,int) or index < 0:
+            raise ValueError("Enter valid value")
+        if index < 0:
+            index += self.__size
+        if index < 0 or index >= self.__size:
+            raise ValueError("Index out of range.")
+        self.__arr[index] = value
 
     def __str__(self) -> str:
-        return f"DynamicArray({self.__array[:self.__size]})"
+        return f"Array is {[self.__arr[i] for i in range(self.__size)]}"
     
     def __repr__(self) -> str:
-        return f"DynamicArray({self.__array[:self.__size]})"
+        return f"Array is {self.__arr}"
     
-    def __len__(self) -> int:
+    def __len__(self):
         return self.__size
     
-    def __add__(self, other: 'DynamicArray') -> 'DynamicArray':
-        result = DynamicArray(self.__size + len(other))
+    def current_capacity(self):
+        return self.__capacity
+    
+    def __add__(self,other:"DynamicArray") -> "DynamicArray":
+        if not isinstance(other,DynamicArray):
+            raise TypeError("Enter valid operand for +")
+        
+        result = DynamicArray(self.__size + other.__size)
         for i in range(self.__size):
-            result[i] = self.__array[i]
-        for i in range(len(other)):
-            result[i + self.__size] = other[i]
+            result.push_back(self[i])
+        for j in range(len(other)):
+            result.push_back(other[j])
         return result
     
-    def __iadd__(self, other: 'DynamicArray') -> 'DynamicArray':
-        for i in range(len(other)):
-            self.__setitem__(self.__size + i, other[i])
+    def __iadd__(self,other:"DynamicArray") -> "DynamicArray":
+        if not isinstance(other,DynamicArray):
+            raise TypeError("Enter valid operand for +=")
+        
+        if self.__capacity < self.__size + other.__size:
+            self.__arr = self.__resize()
+
+        for i in range(other.__size):
+           self.push_back(other[i])
+
         return self
+    
+    def __eq__(self, other: "DynamicArray") -> bool:
+        if isinstance(other,DynamicArray):
+            if self.__size != other.__size:
+                return False
+            return all(self[i] == other[i] for i in range(self.__size))
+        else:
+            raise TypeError("Enter valid type...")
+    
+    def __ne__(self, other: "DynamicArray") -> bool:
+        if isinstance(other,DynamicArray):
+            return not self == other
+        else:
+            raise TypeError("Enter valid type...")
 
-    def __eq__(self, other: object) -> bool:
-        if not isinstance(other, DynamicArray):
-            return NotImplemented
-        elif self.__size != other.__size:
-            return False 
-        flag = True
+    def __lt__(self,other:"DynamicArray") -> bool:
+        if isinstance(other,DynamicArray):
+            return self.__size < other.__size
+        else:
+            raise TypeError("Enter valid type...")    
+    def __le__(self,other:"DynamicArray") -> bool:
+        if isinstance(other,DynamicArray):
+            return self == other or self < other
+        else:
+            raise TypeError("Enter valid type...")
+    
+    def __gt__(self,other:"DynamicArray") -> bool:
+        if isinstance(other,DynamicArray):
+            return self.__size > other.__size
+        else:
+            raise TypeError("Enter valid type...")
+    def __ge__(self,other:"DynamicArray") -> bool:
+        if isinstance(other,DynamicArray):
+            return self > other or self == other
+        else:
+            raise TypeError("Enter valid type...")
+    
+    def __iter__(self) -> Iterator[Any]:
         for i in range(self.__size):
-            if other.__array[i] != self.__array[i]:
-                flag = False
-        
-        return flag
-        
-    
-    def __ne__(self, other: object) -> bool:
-        return not self.__eq__(other)
-    
-    def __lt__(self, other: object) -> bool:
-        if not isinstance(other, DynamicArray):
-            return NotImplemented
-        return self.__size < len(other)
-    
-    def __le__(self, other: object) -> bool:
-        return self.__size <= len(other)
-
-    def __gt__(self, other: object) -> bool:
-        return not self.__le__(other)
-    
-    def __ge__(self, other: object) -> bool:
-        return not self.__lt__(other)
-
-    def __iter__(self) -> Generator:
-        for i in range(self.__size):
-            yield self.__array[i]
-
+            yield self.__arr[i]
     def __hash__(self) -> int:
-        raise ValueError("Mutable objects are not hashable...")
+        raise TypeError("Dynamic array is mutable and can not be hashed")
 
-a = DynamicArray()
-b = DynamicArray()
-a.__setitem__(0,"Hello")
-a.__setitem__(1,"world")
-a.__setitem__(2,"Bye")
-
-
-gen = iter(a)
-for i in gen:
-    print(i)
-
-print(a)
-print(b)
-
-print(a > b)
-
+first_object = DynamicArray(3)
+second_object = DynamicArray(3)
