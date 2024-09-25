@@ -4,12 +4,15 @@ from typing import Any,Iterator
 class DynamicArray:
     def __init__(self,capacity :int = 10,value : Any = 0) -> None:
         self.__size = 0
-        self.setCapacity(capacity)
+        if isinstance(capacity,int) and capacity > 0:
+            self.capacity = capacity
+        else:
+            raise ValueError("Enter valid type")
         self.__arr = array.array("i", [value] * self.__capacity)
     
     def push_back(self,value:Any):
         if self.__capacity == self.__size:
-            self.__arr = self.__resize()
+            self.__resize()
         self.__arr[self.__size] = value
         self.__size += 1
 
@@ -19,13 +22,7 @@ class DynamicArray:
             for i in range(self.__size):
                 new_arr[i] = self.__arr[i]
             self.__capacity = new_capacity
-            return new_arr
-    
-    def setCapacity(self,quantity):
-        if isinstance(quantity,int) and quantity > 0:
-            self.__capacity = quantity
-        else:
-            raise ValueError("Enter valid value...")
+            self.__arr = new_arr
     
     def __getitem__(self,index:int) -> Any:
         if not isinstance(index,int):
@@ -72,8 +69,8 @@ class DynamicArray:
         if not isinstance(other,DynamicArray):
             raise TypeError("Enter valid operand for +=")
         
-        if self.__capacity < self.__size + other.__size:
-            self.__arr = self.__resize()
+        while self.__capacity < self.__size + other.__size:
+            self.__resize()
 
         for i in range(other.__size):
            self.push_back(other[i])
