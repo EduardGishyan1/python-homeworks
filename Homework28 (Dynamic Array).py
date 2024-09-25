@@ -5,7 +5,7 @@ class DynamicArray:
     def __init__(self,capacity :int = 10,value : Any = 0) -> None:
         self.__size = 0
         if isinstance(capacity,int) and capacity > 0:
-            self.capacity = capacity
+            self.__capacity = capacity
         else:
             raise ValueError("Enter valid type")
         self.__arr = array.array("i", [value] * self.__capacity)
