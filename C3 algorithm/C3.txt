@@ -1,0 +1,18 @@
+MRO of O [O,object]
+MRO of D [D,O,object]
+MRO of E [E,O,object]
+MRO of F [F,O,object]
+MRO of B [B,D,E,O,object] 
+MRO of C [C,E,F,O,object]
+
+result = []
+Mro of A is [A,Mro(B),Mro(C)] = Head of Mro(B) and Mro(C) is B,C ,
+result = [A,B,C]  , Mro(B) is [D,E,O,object] , Mro(C) is [E,F,O,object] Mro(B)
+head is D , Mro(C) head is E result is [A,B,C,D,E] Mro(B) is 
+[E,O,object] Mro(C) is [F,O,object] Head of Mro(B) is E , Head of Mro(C) is F,
+E is in result list add only F , result is [A,B,C,D,E,F] Mro(B) is [O,object]
+Mro(C) is [O,object] Head of Mro(B) is O Head of Mro(C) is O add only one  O result
+is [A,B,C,D,E,F,O]  Mro(B) is [object] Mro(C) is [object] head of Mro(B) is object 
+head of Mro(C) is object too add only one object result is [A.B,C,D,E,F,O,object]
+
+MRO of A [A,B,C,D,E,F,O,object]  
