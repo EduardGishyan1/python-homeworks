@@ -249,11 +249,8 @@ class PasswordValidator:
     
     def __set__(self,instance,value):
         self.count = sum(1 for i in value if i.isdigit())
-        if len(value) < self.min_length:
+        if len(value) < self.min_length or self.count < self.len_numbers:
             raise ValueError("Enter valid password...")
-        if self.count < self.len_numbers:
-            raise ValueError("Enter valid password...")
-        print("Success...")
         instance.__password = value
     
     def __get__(self,instance,owner):
