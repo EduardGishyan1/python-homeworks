@@ -76,3 +76,22 @@ def insertion_sort(nums: List[int]) -> None:
 # ls = [100,90,80,70,60,50,40,30,20,10]
 # insertion_sort(ls)
 # print(ls)
+
+# Task4
+
+def counting_sort(nums:List[int]):
+    max_val = max(nums) + 1
+    counts = [0] * max_val
+    
+    for i in nums:
+        counts[i] += 1
+    
+    output = []
+    for i in range(len(counts)):
+        output.extend([i]*counts[i])
+    
+    return output
+
+# ls = [7,4,11,6,2,5,8,10,1]
+# sorted = counting_sort(ls)
+# print(sorted)
