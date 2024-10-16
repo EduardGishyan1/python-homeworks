@@ -58,3 +58,21 @@ class Students:
 # students_list = [Students(random.randint(16,50),random.randint(1,100)) for _ in range(20)]
 # insertion_sort(students_list)
 # print(students_list)
+
+# Task3
+
+def insertion_sort(nums: List[int]) -> None:
+    for i in range(len(nums)):
+        key = nums[i]
+        j = i - 1
+        if key < nums[j]:
+            while j >= 0 and key < nums[j]:
+                nums[j] , nums[j+1] = nums[j+1],nums[j]
+                j -= 1
+            nums[j+1] = key
+
+
+
+# ls = [100,90,80,70,60,50,40,30,20,10]
+# insertion_sort(ls)
+# print(ls)
