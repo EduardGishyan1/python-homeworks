@@ -1,7 +1,7 @@
 class Person:
     def __init__(self,name,age):
         self.name = name
-        self.__age = age
+        self.set_age(age)
     
     def display_message(self):
         print(f"Name is {self.name}")
