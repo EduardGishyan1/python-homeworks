@@ -86,11 +86,11 @@ class Discount(ABC):
         ...
 
 class PercentageDiscount(Discount):
-    def apply(self,amount):
+    def apply_discount(self,amount):
         return amount * 1.5
     
 class FixedDiscount(Discount):
-    def apply(self,amount):
+    def apply_discount(self,amount):
         return amount - 20
     
 # L Liskov
